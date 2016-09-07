@@ -1,0 +1,35 @@
+<a href="/groups">Dashboard</a><br>
+
+<h1><%= @group.name %></h1><br>
+<h2><%= @group.description %></h2><br>
+	<% if @group.user_id != current_user.id %>
+		<form action = '/members' method='post'>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="hidden" name="group_id" value="<%= @group.id %>">
+			<input type="submit"  value= "Join Group">
+			</form>
+	<% else @group.user_id == current_user.id%>
+		<form action = '/members/<%= @group.id %>' method='post'>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value= "Leave Group">
+			</form>
+	<% end %>
+
+	<br>
+
+<h3>Created By: 
+<% if @group.user_id == current_user.id %>
+	YOU
+<% else %>	
+	<%= @group.user.first_name %>
+<% end %>
+</h3>
+<h4>Members:<br>
+<% t = Member.where(group_id: @group.id) %>
+	<% @member.each do |m| %>
+		<%= m.user.first_name %> <%= m.user.last_name %><br>
+	<% end %>
+
+</h4>

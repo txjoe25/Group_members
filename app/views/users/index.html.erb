@@ -1,0 +1,22 @@
+<div class="w3-half w3-padding">
+<h3>New User Registration</h3>
+<form action='/users' method='post'>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label class="w3-label">First Name:</label><input class="w3-input w3-animate-input" style="width:30%" type="text" name="user[first_name]"><br>
+	<label class="w3-label">Last Name:</label><input class="w3-input w3-animate-input" style="width:30%" type="text" name="user[last_name]"><br>
+	<label class="w3-label">Email:</label><input class="w3-input w3-animate-input" style="width:30%" type="email" name="user[email]"><br>
+	<label class="w3-label">Password:</label><input class="w3-input w3-animate-input" style="width:30%" type="password" name="user[password]"><br>
+	<p>*password should be at least 8 characters</p>
+	<label class="w3-label">Confirm Password:</label><input class="w3-input w3-animate-input" style="width:30%" type="password" name="user[password_confirmation]"><br>
+	<input class="w3-input-btn" type="submit" value="Register">
+</form>
+</div>
+<div class="w3-half w3-padding">
+<h3>Registered User Login</h3>
+<form class="w3-container" action='/sessions' method='post'>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label class="w3-label">Email:</label><input class="w3-input w3-animate-input" style="width:30%" type="email" name="email"><br>
+	<label class="w3-label">Password:</label><input class="w3-input w3-animate-input" style="width:30%" type="password" name="password"><br>
+	<input class="w3-input-btn"type="submit" value="Login">
+</form>
+</div>

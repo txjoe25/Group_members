@@ -1,0 +1,27 @@
+<h1>Hi <%= current_user.first_name %> <%= current_user.last_name %></h1>
+<div class="w3-half w3-padding">
+<h3>Here are the organizations you may join:</h3>
+ <% @group.each do |g| %>
+ <% if g.user.id == current_user.id %>
+ 	<form action='/groups/<%= g.id %>' method='post'>
+ 		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+ 		<input type="hidden" name="_method" value="delete">
+ 		<input type="submit" Value="Delete Group">
+ 	</form>
+ <% end %>
+ 	<a href="/groups/<%= g.id %>">
+ 	<%= g.name %> </a>has <%= g.users.count %> Member(s)!<br>
+ 	<%= g.description %><br>
+
+ <% end %>
+
+</div>
+<div class="w3-half w3-padding">
+	<h3>Create a new organization</h3>
+<form class="w3-container" action='/groups' method='post'>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label class="w3-label">Organization Name:</label><input class="w3-input w3-animate-input" style="width:30%" type="text" name="group[name]"><br>
+	<label class="w3-label">Description:</label><input class="w3-input w3-animate-input" style="width:30%" type="text" name="group[description]"><br>
+	<input class="w3-input-btn" type="submit" value="Create">
+</form>
+</div>
