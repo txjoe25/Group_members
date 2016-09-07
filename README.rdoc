@@ -1,28 +1,6 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Required Features
+♦ Create and deploy in under 4.5 hours
+♦ Registration and Login/Logout with validations.
+♦ Dashboard allows users to create a new organization and display all organizations. Each organization will show total members and delete button if the logged in user created the organization. Organization name will route the user to the particular organizations page. User who creates the organization will be a member of the organization.
+♦ Organization page will allow users to become a member of the organization.
+♦ Organization creator can will have button to leave organization.
