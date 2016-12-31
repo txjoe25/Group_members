@@ -1,6 +1,7 @@
 Required Features( Ruby Belt Exam )
-♦ Create and deploy in under 4.5 hours
+
+♦ Created and deployed in under 4.5 hours
 ♦ Registration and Login/Logout with validations.
 ♦ Dashboard allows users to create a new organization and display all organizations. Each organization will show total members and delete button if the logged in user created the organization. Organization name will route the user to the particular organizations page. User who creates the organization will be a member of the organization.
-♦ Organization page will allow users to become a member of the organization.
-♦ Organization creator can will have button to leave organization.
+♦ Organization page allows users to become a member of the organization.
+♦ Organization creator has button to leave organization.
